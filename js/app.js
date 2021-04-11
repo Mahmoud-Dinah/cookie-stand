@@ -44,7 +44,6 @@ const Seattle = {
 };
 
 
-// here
 const Tokyo = {
     location: 'Tokyo',
     minCust: 3,
@@ -87,9 +86,6 @@ const Tokyo = {
     }
 };
 
-// to here
-
-/// here
 
 const Dubai = {
     location: 'Dubai',
@@ -133,11 +129,6 @@ const Dubai = {
     }
 };
 
-//// to here
-
-
-///// here
-
 const Paris = {
     location: 'Paris',
     minCust: 20,
@@ -180,7 +171,50 @@ const Paris = {
     }
 };
 
-///// to here
+
+const Lima = {
+    location: 'Lima',
+    minCust: 2,
+    maxCust: 16,
+    avgCookie: 4.6,
+    randCust: [],
+    cal: [],
+    totalcookies: 0,
+
+    calc: function () {
+        for (let i = 1; i < this.randCust.length; i++) {
+
+            this.cal.push(Math.ceil(this.randCust[i] * this.avgCookie))
+        }
+    },
+    randomNum: function () {
+        for (let i = 0; i < hour.length; i++) {
+            this.randCust.push(randomValue(1, 14))
+        }
+    },
+    show: function () {
+        let div = document.getElementById('Lima')
+
+        let branchName = document.createElement('h2')
+        div.appendChild(branchName)
+        branchName.textContent = ('Lima')
+        let unorderedlist = document.createElement('ul')
+        div.appendChild(unorderedlist)
+        for (let i = 0; i < this.cal.length; i++) {
+            let li = document.createElement('li');
+            unorderedlist.appendChild(li);
+            li.textContent = `${hour[i]}: ${this.cal[i]} cookies `;
+
+            // this is to count the total of cookies 
+            this.totalcookies = this.totalcookies + this.cal[i]
+        }
+        li = document.createElement('li')
+        unorderedlist.appendChild(li);
+        li.textContent = `Total: ${this.totalcookies} cookies`
+    }
+};
+
+
 
 
 
@@ -199,6 +233,10 @@ Dubai.show();
 Paris.randomNum();
 Paris.calc();
 Paris.show();
+
+Lima.randomNum();
+Lima.calc();
+Lima.show();
 
 console.log(Seattle.cal);
 console.log(hour);
