@@ -4,8 +4,11 @@ function randomValue(min, max) {
 
 let hour = ['6 am', '7 am', '8 am', '9 am', '10 am', '11 am', '12 pm', '1 pm', '2 pm', '3 pm', '4 pm', '5 pm', '6 pm', '7 pm', '8 pm'];
 
+var cookieTable = document.getElementById('table1');
+
+
 // here
-let arry= [];
+let newArry= [];
 function cookiesShob(location,minCust,maxCust,avgCookie,[],[], ) {
     this.location = location;
     this.minCust = minCust;
@@ -14,9 +17,9 @@ function cookiesShob(location,minCust,maxCust,avgCookie,[],[], ) {
     this.randCust =  [];
     this.cal = [];
     this.totalcookies = 0;
+    newArry.push(this);
     
 }
-
 
 let Seattle = new cookiesShob ('Seattle','23','65','6.3',[],[],'0')
 let Tokyo = new cookiesShob ('Tokyo','3','24','1.2',[],[],'0')
@@ -24,11 +27,79 @@ let Dubai = new cookiesShob ('Dubai','11','38','3.7',[],[],'0')
 let Paris = new cookiesShob ('Paris','20','38','3.7',[],[],'0')
 let Lima =  new cookiesShob ('Lima','2','16','4.6',[],[],'0')
 
-console.log(Seattle);
-console.log(Tokyo);
-console.log(Dubai);
-console.log(Paris);
-console.log(Lima);
+// console.log(newArry);
+
+cookiesShob.prototype.calc = function () {
+     for (let i = 1; i < this.randCust.length; i++) {
+        this.cal.push(Math.ceil(this.randCust[i] * this.avgCookie))
+     }
+        };
+ cookiesShob.prototype.randomNum = function () {
+       for (let i = 0; i < hour.length; i++) {
+        this.randCust.push(randomValue(this.minCust, this.maxCust))
+    }
+ };
+
+ cookiesShob.prototype.show =  function () {
+        let div = document.getElementById('new')
+
+        let branchName = document.createElement('h2')
+        div.appendChild(branchName)
+        branchName.textContent = (this.location)
+        let unorderedlist = document.createElement('ul')
+        div.appendChild(unorderedlist)
+        for (let i = 0; i < this.cal.length; i++) {
+            let li = document.createElement('li');
+            unorderedlist.appendChild(li);
+            li.textContent = `${hour[i]}: ${this.cal[i]} cookies `;
+
+            // this is to count the total of cookies 
+            this.totalcookies = this.totalcookies + this.cal[i]
+        }
+        li = document.createElement('li')
+        unorderedlist.appendChild(li);
+        li.textContent = `Total: ${this.totalcookies} cookies`
+
+
+        let trElement = document.createElement('tr');
+        let tdElement = document.createElement('td');
+        tdElement.textContent = this.location;
+        trElement.appendChild(tdElement);
+
+        for (var i = 0; i < hour.length; i++) {
+
+            //create td
+            tdElement = document.createElement('td');
+            // create td content
+            tdElement.textContent = this.cal[i];
+            // append td to tr
+            trElement.appendChild(tdElement);
+          }
+
+           // totals sales for each location for the day
+  tdElement = document.createElement('td');
+  tdElement.textContent = this.dailySalesTotals;
+  trElement.appendChild(tdElement);
+  //append th to table in DOM
+  cookieTable.appendChild(trElement);
+        
+
+    }
+
+
+    for(let i = 0 ; i< newArry.length; i++){
+        newArry[i].randomNum();
+        newArry[i].calc();
+        newArry[i].show();
+    }
+
+
+
+
+
+
+
+
 
 
 // 2here
