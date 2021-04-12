@@ -18,7 +18,7 @@ const Seattle = {
     },
     randomNum: function () {
         for (let i = 0; i < hour.length; i++) {
-            this.randCust.push(randomValue(1, 14))
+            this.randCust.push(randomValue(this.minCust, this.maxCust))
         }
     },
     show: function () {
