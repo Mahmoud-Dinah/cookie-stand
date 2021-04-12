@@ -1,15 +1,48 @@
+
+
 function randomValue(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 let hour = ['6 am', '7 am', '8 am', '9 am', '10 am', '11 am', '12 pm', '1 pm', '2 pm', '3 pm', '4 pm', '5 pm', '6 pm', '7 pm', '8 pm'];
+let div = document.getElementById('new')
+let cookieTable = document.getElementById('table1');
 
-var cookieTable = document.getElementById('table1');
+div.appendChild(cookieTable);
 
+ let headerRaw = document.createElement('tr')
+        cookieTable.appendChild(headerRaw);
+         let td0 = document.createElement('td')
+         td0.textContent = '';
+         headerRaw.appendChild(td0);
+        // let thEl = document.createElement('th')
+        // thEl.textContent = hour;
+        // headerRaw.appendChild(thEl);
 
+function head() {
+
+    for (var i = 0; i < hour.length; i++) {
+
+        tdEl = document.createElement('td');
+      
+        tdEl.textContent = hour[i] ;
+       
+        headerRaw.appendChild(tdEl);
+      }
+
+      tdEl0 = document.createElement('td');
+      tdEl.textContent = 'total';
+      headerRaw.appendChild(tdEl0);
+      
+}
+
+head();
+       
 // here
+
 let newArry= [];
-function cookiesShob(location,minCust,maxCust,avgCookie,[],[], ) {
+
+function cookiesShob(location,minCust,maxCust,avgCookie,[],[],) {
     this.location = location;
     this.minCust = minCust;
     this.maxCust = maxCust;
@@ -21,11 +54,11 @@ function cookiesShob(location,minCust,maxCust,avgCookie,[],[], ) {
     
 }
 
-let Seattle = new cookiesShob ('Seattle','23','65','6.3',[],[],'0')
-let Tokyo = new cookiesShob ('Tokyo','3','24','1.2',[],[],'0')
-let Dubai = new cookiesShob ('Dubai','11','38','3.7',[],[],'0')
-let Paris = new cookiesShob ('Paris','20','38','3.7',[],[],'0')
-let Lima =  new cookiesShob ('Lima','2','16','4.6',[],[],'0')
+let Seattle = new cookiesShob ('Seattle',23,65,6.3,[],[],0)
+let Tokyo = new cookiesShob ('Tokyo',3,24,1.2,[],[],0)
+let Dubai = new cookiesShob ('Dubai',11,38,3.7,[],[],0)
+let Paris = new cookiesShob ('Paris',20,38,3.7,[],[],0)
+let Lima =  new cookiesShob ('Lima',2,16,4.6,[],[],0)
 
 // console.log(newArry);
 
@@ -38,11 +71,10 @@ cookiesShob.prototype.calc = function () {
        for (let i = 0; i < hour.length; i++) {
         this.randCust.push(randomValue(this.minCust, this.maxCust))
     }
+
  };
 
  cookiesShob.prototype.show =  function () {
-        let div = document.getElementById('new')
-
         let branchName = document.createElement('h2')
         div.appendChild(branchName)
         branchName.textContent = (this.location)
@@ -52,40 +84,40 @@ cookiesShob.prototype.calc = function () {
             let li = document.createElement('li');
             unorderedlist.appendChild(li);
             li.textContent = `${hour[i]}: ${this.cal[i]} cookies `;
-
             // this is to count the total of cookies 
             this.totalcookies = this.totalcookies + this.cal[i]
-        }
+        };
+
         li = document.createElement('li')
         unorderedlist.appendChild(li);
         li.textContent = `Total: ${this.totalcookies} cookies`
 
+                            /////// TABLE /////////////
 
-        let trElement = document.createElement('tr');
-        let tdElement = document.createElement('td');
-        tdElement.textContent = this.location;
-        trElement.appendChild(tdElement);
+       
+
+     
+
+        let trEl = document.createElement('tr');
+        let tdEl = document.createElement('td');
+        tdEl.textContent = this.location;
+        trEl.appendChild(tdEl);
 
         for (var i = 0; i < hour.length; i++) {
 
-            //create td
-            tdElement = document.createElement('td');
-            // create td content
-            tdElement.textContent = this.cal[i];
-            // append td to tr
-            trElement.appendChild(tdElement);
+            tdEl = document.createElement('td');
+          
+            tdEl.textContent = this.cal[i];
+           
+            trEl.appendChild(tdEl);
           }
 
-           // totals sales for each location for the day
-  tdElement = document.createElement('td');
-  tdElement.textContent = this.dailySalesTotals;
-  trElement.appendChild(tdElement);
-  //append th to table in DOM
-  cookieTable.appendChild(trElement);
-        
+  tdEl = document.createElement('td');
+  tdEl.textContent = this.totalcookies;
+  trEl.appendChild(tdEl);
+  cookieTable.appendChild(trEl);
 
     }
-
 
     for(let i = 0 ; i< newArry.length; i++){
         newArry[i].randomNum();
