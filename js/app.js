@@ -30,14 +30,19 @@ function head() {
         headerRaw.appendChild(tdEl);
       }
 
-      tdEl0 = document.createElement('td');
-      tdEl.textContent = 'total';
-      headerRaw.appendChild(tdEl0);
+      tdEn = document.createElement('td');
+      tdEn.textContent = 'total';
+      headerRaw.appendChild(tdEn);
+
+      tdEn = document.createElement('td');
+      tdEl.textContent = ' ';
+      headerRaw.appendChild(tdEn);
       
 }
 
 head();
        
+
 // here
 
 let newArry= [];
@@ -117,7 +122,10 @@ cookiesShob.prototype.calc = function () {
   trEl.appendChild(tdEl);
   cookieTable.appendChild(trEl);
 
+          
     }
+
+    
 
     for(let i = 0 ; i< newArry.length; i++){
         newArry[i].randomNum();
