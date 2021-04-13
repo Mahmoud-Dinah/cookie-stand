@@ -1,7 +1,7 @@
 
 
 
-function randomValue(min, max) {
+function randomValue(min, max) {   // this random func. credits to MDN web docs
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
@@ -101,16 +101,13 @@ cookiesShob.prototype.calc = function () {
 
                             /////// TABLE /////////////
 
-       
-
-     
 
         let trEl = document.createElement('tr');
         let tdEl = document.createElement('td');
         tdEl.textContent = this.location;
         trEl.appendChild(tdEl);
 
-        for (var i = 0; i < hour.length; i++) {
+        for (var i = 0; i < hour.length; i++) {   // this for loop from stackoverflow
 
             tdEl = document.createElement('td');
           
@@ -123,11 +120,9 @@ cookiesShob.prototype.calc = function () {
   tdEl.textContent = this.totalcookies;
   trEl.appendChild(tdEl);
   cookieTable.appendChild(trEl);
-
           
     }
 
-    
 
     for(let i = 0 ; i< newArry.length; i++){
         newArry[i].randomNum();
@@ -136,16 +131,7 @@ cookiesShob.prototype.calc = function () {
     }
 
 
-
-
-
-
-
-
-
-
 // 2here
-
 
 
 // const Seattle = {
