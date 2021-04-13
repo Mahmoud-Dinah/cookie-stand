@@ -107,7 +107,7 @@ cookiesShob.prototype.calc = function () {
         tdEl.textContent = this.location;
         trEl.appendChild(tdEl);
 
-        for (var i = 0; i < hour.length; i++) {   // this for loop from stackoverflow
+        for (var i = 0; i < hour.length; i++) {   // this (for-loop) from stackoverflow
 
             tdEl = document.createElement('td');
           
