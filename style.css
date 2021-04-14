@@ -33,3 +33,12 @@ section div p {
    font-weight: bold;
    color:rgba(0, 0, 0, 0.712);
 }
+input{
+    color: red;
+    font-size: small;
+    border-radius: 151px;
+}
+
+form{
+    text-align: center;
+}
