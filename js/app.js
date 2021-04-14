@@ -160,20 +160,12 @@ function footerRow() {
    let td13 = document.createElement('td')
     lastRow.appendChild(td13)
     td13.textContent = grandTotal;
-    //     for (let i = 0 ; i< hour.length ; i++){
-    //        sum1+= newArry[i].cal[i];
-    //         td12= document.createElement('td')
-    //         lastRow.appendChild(td12);
-    //         td12.textContent = sum1;
-    //         totaltotal += sum1; 
-    //     }
-    //     td13 = document.createElement('td')
-    // lastRow.appendChild(td13)
-    // td13.textContent = totaltotal;
+   
 
 };
 
 footerRow();
+
 // form 
 
 let form = document.getElementById('newCity');
@@ -193,14 +185,16 @@ function submiting(event) {
     let avg = event.target.avgInput.value;
     avg = parseFloat(avg);
     let newCity = new cookiesShob(newBranch, min, max, avg);
-
+  
     newCity.randomNum();
     newCity.calc();
     newCity.show();
 
+    footerRow();
 
     // console.log(max);
 }
+
 
 
 function RemoveRow(obj){         // credits to rootbear/github
@@ -210,7 +204,6 @@ function RemoveRow(obj){         // credits to rootbear/github
 }
 
 RemoveRow();
-
 
 
 
