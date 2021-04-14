@@ -75,25 +75,29 @@ cookiesShob.prototype.randomNum = function () {
 cookiesShob.prototype.calc = function () {
     for (let i = 0; i < this.randCust.length; i++) {
         this.cal.push(Math.ceil(this.randCust[i] * this.avgCookie))
+        this.totalcookies = this.totalcookies + this.cal[i]
     }
 };
 
 cookiesShob.prototype.show = function () {
-    let branchName = document.createElement('h2')
-    div.appendChild(branchName)
-    branchName.textContent = (this.location)
-    let unorderedlist = document.createElement('ul')
-    div.appendChild(unorderedlist)
-    for (let i = 0; i < this.cal.length; i++) {
-        let li = document.createElement('li');
-        unorderedlist.appendChild(li);
-        li.textContent = `${hour[i]}: ${this.cal[i]} cookies `;
-        // this is to count the total of cookies 
-        this.totalcookies = this.totalcookies + this.cal[i]
-    };
-    li = document.createElement('li')
-    unorderedlist.appendChild(li);
-    li.textContent = `Total: ${this.totalcookies} cookies`
+
+    // below to show li list
+
+    // let branchName = document.createElement('h2')
+    // div.appendChild(branchName)
+    // branchName.textContent = (this.location)
+    // let unorderedlist = document.createElement('ul')
+    // div.appendChild(unorderedlist)
+    // for (let i = 0; i < this.cal.length; i++) {
+    //     let li = document.createElement('li');
+    //     unorderedlist.appendChild(li);
+    //     li.textContent = `${hour[i]}: ${this.cal[i]} cookies `;
+    //     // this is to count the total of cookies 
+    //     // this.totalcookies = this.totalcookies + this.cal[i]
+    // };
+    // li = document.createElement('li')
+    // unorderedlist.appendChild(li);
+    // li.textContent = `Total: ${this.totalcookies} cookies`
 
     /////// TABLE /////////////
 
@@ -197,6 +201,7 @@ function submiting(event) {
 
     // console.log(max);
 }
+
 
 function RemoveRow(obj){         // credits to rootbear/github
     obj=document.getElementById(obj);

@@ -1,8 +1,22 @@
 #table1{
 color: darkblue;
 font-size: large;
-font-family: fantasy
+font-family: fantasy;
+border-style: ridge;
+border-radius: 30px;
+border-color:lime;
+border-collapse: collapse;
+  table-layout: fixed;
+  width: 80%;
+
 }
+
+#new{
+padding-top: 15px;
+padding-left: 100px;
+}
+
+
 
 body {
     background-color: whitesmoke;
@@ -41,4 +55,14 @@ input{
 
 form{
     text-align: center;
+    padding-right: 200px;
+    padding-left: 200px;
 }
+
+
+table td {
+    border: solid 1px #e7e7e7;
+    border-color: black;
+    width: 50px;
+    word-wrap: break-word;
+  }
