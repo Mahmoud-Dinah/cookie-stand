@@ -1,10 +1,8 @@
-
-
+`use strict`
 
 function randomValue(min, max) {   // this random func. credits to MDN web docs
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
-
 
 let hour = ['6 am', '7 am', '8 am', '9 am', '10 am', '11 am', '12 pm', '1 pm', '2 pm', '3 pm', '4 pm', '5 pm', '6 pm', '7 pm', '8 pm'];
 let div = document.getElementById('new')
@@ -49,7 +47,7 @@ head();
 
 let newArry= [];
 
-function cookiesShob(location,minCust,maxCust,avgCookie,[],[],) {
+function cookiesShob(location,minCust,maxCust,avgCookie) {
     this.location = location;
     this.minCust = minCust;
     this.maxCust = maxCust;
@@ -94,7 +92,6 @@ cookiesShob.prototype.calc = function () {
             // this is to count the total of cookies 
             this.totalcookies = this.totalcookies + this.cal[i]
         };
-
         li = document.createElement('li')
         unorderedlist.appendChild(li);
         li.textContent = `Total: ${this.totalcookies} cookies`
@@ -120,15 +117,50 @@ cookiesShob.prototype.calc = function () {
   tdEl.textContent = this.totalcookies;
   trEl.appendChild(tdEl);
   cookieTable.appendChild(trEl);
-          
-    }
 
+    }
 
     for(let i = 0 ; i< newArry.length; i++){
         newArry[i].randomNum();
         newArry[i].calc();
         newArry[i].show();
     }
+
+
+
+// form 
+
+let form = document.getElementById('newCity');
+// console.log(form);
+
+form.addEventListener('submit', submiting)
+
+function submiting(event){
+    event.preventDefault();
+    // console.log(event);
+
+    let newBranch = event.target.locInput.value;
+    let min = event.target.minInput.value;
+         min = parseInt(min);
+    let max = event.target.maxInput.value;
+    let avg = event.target.avgInput.value;
+         avg = parseFloat(avg);
+    let newCity = new cookiesShob (newBranch,min,max,avg);
+
+    newCity.randomNum();
+    newCity.calc();
+    newCity.show();
+
+    // console.log(max);
+}
+
+
+
+
+
+
+
+
 
 
 // 2here
