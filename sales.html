@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,23 +8,47 @@
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
+
 <body>
 
-    <header>   </header>
+    <header> </header>
     <a href="index.html">Home</a>
     <main>
 
-        <div id="new">
-            <table  id="table1">
-  
-            </table>
-       
-        </div>
-        
-       
+        <form id="newCity">
+            <br>
+            <fieldset>
 
+                <legend>Adding new City </legend>
+                <label for="locInput">Enter City Name: </label>
+                <input type="text" id="locInput">
+                <br>
+                <label for="minInput">Enter Min Customer: </label>
+                <input type="number" id="minInput">
+                <br>
+                <label for="maxInput">Enter Max Customer: </label>
+                <input type="number" id="maxInput">
+                <br>
+                <label for="avgInput">Enter Avg Cookie: </label>
+                <input type="number" id="avgInput" step="0.01" min="0" max="99999999"> <!--float number credits for quora website-->
+                <br>
+                <input type="submit" value="submit" onclick="myFunction();">
+                <input type="button" name="" value="Remove Last Row" onclick="RemoveRow('table1');">
+         
+            </fieldset>
+        </form>
+        <br>
+        <div id="new">
+            <table id="table1"> </table>
+        </div>
+
+
+       
+        
     </main>
     <footer></footer>
     <script src="js/app.js"></script>
 </body>
+
 </html>
+
