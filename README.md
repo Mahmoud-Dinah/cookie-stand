@@ -1,6 +1,6 @@
 # cookie-stand
 
-This project build to improve salmon cookie shop sales, and to get biger in bussniss
+This project build to improve salmon cookie shop sales, and to get bigger in business
 
 we used in this project:
 
