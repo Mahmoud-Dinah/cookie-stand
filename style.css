@@ -17,6 +17,7 @@ border-color:lime;
 border-collapse: collapse;
   table-layout: fixed;
   width: 84%;
+  
 }
 
 
@@ -24,13 +25,13 @@ border-collapse: collapse;
 body {
     font-family: Arial;
     padding: 10px;
-    background: whitesmoke;
+    background-color:gray;
   }
 /* Header/Blog Title */
 .header {
   padding: 30px;
   text-align: center;
-  background: gray;
+  
 }
 
 .header h1 {
@@ -64,7 +65,7 @@ form{
 
    * {font-family: Helvetica Neue, Arial, sans-serif; }  /*from freshdesign web  */
 
-body { background-image: linear-gradient(#aaa 25%, #000);}
+body { background-image: linear-gradient(rgba(255, 255, 255, 0.658) 80%, #000);}
 
 h1, table { text-align: center; }
 
@@ -122,17 +123,11 @@ tr:hover:not(#firstrow) { transform: scale(1.2); font-weight: 1; box-shadow: 0px
   .rightcolumn {
     float: left;
     width: 25%;
-    background-color: #f1f1f1;
+  
     padding-left: 20px;
   }
   
-  /* Fake image */
-  .fakeimg {
-    background-color: #aaa;
-    width: 100%;
-    padding: 20px;
-  }
-  
+
   /* Add a card effect for articles */
   .card {
     background-color: white;
@@ -151,8 +146,9 @@ tr:hover:not(#firstrow) { transform: scale(1.2); font-weight: 1; box-shadow: 0px
   .footer {
     padding: 20px;
     text-align: center;
-    background: #ddd;
+    background: gray;
     margin-top: 20px;
+    font-size: x-small;
   }
   
   /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
@@ -175,4 +171,12 @@ tr:hover:not(#firstrow) { transform: scale(1.2); font-weight: 1; box-shadow: 0px
   .card p {
     font-family: 'Merienda', cursive;  }
 
-    
+    .card {
+        background-color: gray;
+        
+    }
+
+
+    #image {
+        width: 100%;
+    }
